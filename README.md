@@ -32,7 +32,7 @@
 
 # Start
 
-Replace the string <b><i>'project-name'</i></b> in all files of the project with your own project name.
+Replace the string <b><i>'vending-machine-api'</i></b> in all files of the project with your own project name.
 (For example with the search/replace function from visual studio code)
 
 <b>Files to edit:</b>
@@ -77,7 +77,7 @@ $ yarn build
 
 ```bash
 # create docker network for database connection
-$ docker network create project-name-network-dev
+$ docker network create vending-machine-api-network-dev
 
 # start the app and database in docker containers
 $ docker-compose -f 'docker-compose.dev.yml' up
@@ -129,7 +129,7 @@ $ yarn docker:test
 
 ```bash
 # create network to connect the app with the db
-$ docker network create project-name-network
+$ docker network create vending-machine-api-network
 
 # set the env variables for the docker compose file (I used github secrets in the github actions pipeline)
 # build the docker image, create & run the app/db container in detached mode (background) 
@@ -144,7 +144,7 @@ $ docker-compose exec app yarn db:migrate:prod
 -   To update the docker image and start the new docker container
 
 ```bash
-$ docker build -t project-name .
+$ docker build -t vending-machine-api .
 $ docker-compose up -d
 ```
 

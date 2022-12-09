@@ -1,5 +1,5 @@
 {
-    "name": "project-name",
+    "name": "vending-machine-api",
     "private": false,
     "version": "1.0.0",
     "description": "Nest TypeScript starter repository",

@@ -15,7 +15,7 @@ jobs:
       - name: Check running containers
         run: docker ps -a
       - name: Check logs
-        run: docker logs project-name-postgres-test-standalone
+        run: docker logs vending-machine-api-postgres-test-standalone
 
       - name: Use Node.js
         uses: actions/setup-node@v1
@@ -43,13 +43,13 @@ jobs:
           node-version: '18'
       
       - name: Create docker network
-        run: docker network create project-name-network-dev
+        run: docker network create vending-machine-api-network-dev
       - name: Start Docker Dev Container
         run: yarn docker:up:hidden
       - name: Check running containers
         run: docker ps -a
       - name: Check logs
-        run: docker logs project-name-postgres-test
+        run: docker logs vending-machine-api-postgres-test
 
       - name: Run database migrations
         run: yarn docker:db:migrate

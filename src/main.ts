@@ -10,8 +10,8 @@ async function bootstrap(): Promise<void> {
 
     const options = new DocumentBuilder()
         .addBearerAuth()
-        .setTitle("project-name")
-        .setDescription("project-name API")
+        .setTitle("vending-machine-api")
+        .setDescription("vending-machine-api API")
         .setVersion("1.0")
         .build();
 
