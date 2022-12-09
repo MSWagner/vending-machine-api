@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AuthService should return validated user1 with token: ValidatedUser1WithToken 1`] = `
+User {
+  "createdAt": "createdAt",
+  "isActive": true,
+  "passwordHash": "$2b$10$n8McQmLm6U/RXlRb9HxNEOgurQecAokxI2oCoumlSOlOj4M.aU59K",
+  "pushTokens": [
+    PushToken {
+      "createdAt": "createdAt",
+      "token": "user1PushTokenFixtures",
+      "uid": "733d80fd-d861-4638-99c8-fcc5c5e93963",
+      "updatedAt": "updatedAt",
+    },
+  ],
+  "uid": "0961866f-ff60-4219-973c-109eecfa52bd",
+  "updatedAt": "updatedAt",
+  "userPermissions": [
+    UserPermission {
+      "createdAt": "createdAt",
+      "permission": Permission {
+        "createdAt": "createdAt",
+        "scope": "user",
+        "uid": "d7316b3e-44de-42b8-bc9b-bbf190cd98fa",
+        "updatedAt": "updatedAt",
+      },
+      "updatedAt": "updatedAt",
+    },
+  ],
+  "username": "user1@email.at",
+}
+`;
+
+exports[`AuthService should return validated user1 with user: ValidatedUser1WithUser 1`] = `
+User {
+  "createdAt": "createdAt",
+  "isActive": true,
+  "passwordHash": "$2b$10$n8McQmLm6U/RXlRb9HxNEOgurQecAokxI2oCoumlSOlOj4M.aU59K",
+  "pushTokens": [
+    PushToken {
+      "createdAt": "createdAt",
+      "token": "user1PushTokenFixtures",
+      "uid": "733d80fd-d861-4638-99c8-fcc5c5e93963",
+      "updatedAt": "updatedAt",
+    },
+  ],
+  "uid": "0961866f-ff60-4219-973c-109eecfa52bd",
+  "updatedAt": "updatedAt",
+  "userPermissions": [
+    UserPermission {
+      "createdAt": "createdAt",
+      "permission": Permission {
+        "createdAt": "createdAt",
+        "scope": "user",
+        "uid": "d7316b3e-44de-42b8-bc9b-bbf190cd98fa",
+        "updatedAt": "updatedAt",
+      },
+      "updatedAt": "updatedAt",
+    },
+  ],
+  "username": "user1@email.at",
+}
+`;
+
+exports[`AuthService should return validated user3 as admin with token: ValidatedUser3AdminWithToken 1`] = `
+User {
+  "createdAt": "createdAt",
+  "isActive": true,
+  "passwordHash": null,
+  "pushTokens": [
+    PushToken {
+      "createdAt": "createdAt",
+      "token": "user3PushTokenFixtures",
+      "uid": "ff5fce38-ca56-4e08-be2c-7af095266bf6",
+      "updatedAt": "updatedAt",
+    },
+  ],
+  "uid": "435c0a53-9e6b-488a-9d1c-582b108ed3e7",
+  "updatedAt": "updatedAt",
+  "userPermissions": [
+    UserPermission {
+      "createdAt": "createdAt",
+      "permission": Permission {
+        "createdAt": "createdAt",
+        "scope": "admin",
+        "uid": "ebf943cd-cd67-4720-bd40-6cf3c25e4054",
+        "updatedAt": "updatedAt",
+      },
+      "updatedAt": "updatedAt",
+    },
+  ],
+  "username": "user3@email.com",
+}
+`;

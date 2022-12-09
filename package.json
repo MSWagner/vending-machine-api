@@ -1,0 +1,132 @@
+{
+    "name": "project-name",
+    "private": false,
+    "version": "1.0.0",
+    "description": "Nest TypeScript starter repository",
+    "license": "MIT",
+    "scripts": {
+        "prebuild": "rimraf dist",
+        "build": "nest build",
+        "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+        "start": "env-cmd --no-override -f ./env/dev.env nest start",
+        "start:dev": "env-cmd --no-override -f ./env/dev.env nest start --watch",
+        "start:debug": "env-cmd --no-override -f ./env/dev.env nest start --debug --watch",
+        "start:prod": "env-cmd --no-override -f ./env/prod.env node dist/main",
+        "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+        "test": "env-cmd -f ./env/test.env jest --detectOpenHandles --runInBand",
+        "test:watch": "env-cmd -f ./env/test.env jest --watch --runInBand",
+        "test:cov": "env-cmd -f ./env/test.env jest --coverage --detectOpenHandles --runInBand",
+        "test:debug": "env-cmd -f ./env/test.env node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+        "test:e2e": "env-cmd -f ./env/test.env jest --config ./test/jest-e2e.json --detectOpenHandles --runInBand",
+        "typeorm": "env-cmd --no-override -f ./env/dev.env ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
+        "db:create:dev": "./node_modules/.bin/env-cmd --no-override -f ./env/dev.env ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:create",
+        "db:migrate:dev": "./node_modules/.bin/env-cmd --no-override -f ./env/dev.env ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run",
+        "db:generate:dev": "./node_modules/.bin/env-cmd --no-override -f ./env/dev.env ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:generate",
+        "db:revert:dev": "./node_modules/.bin/env-cmd --no-override -f ./env/dev.env ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:revert",
+        "db:create:test": "./node_modules/.bin/env-cmd --no-override -f ./env/test.env ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:create",
+        "db:migrate:test": "./node_modules/.bin/env-cmd --no-override -f ./env/test.env ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run",
+        "db:migrate:test:docker": "./node_modules/.bin/env-cmd -f ./env/test.docker.env ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run",
+        "db:generate:test": "./node_modules/.bin/env-cmd --no-override -f ./env/test.env ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:generate",
+        "db:revert:test": "./node_modules/.bin/env-cmd --no-override -f ./env/test.env ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:revert",
+        "db:migrate:prod": "./node_modules/.bin/env-cmd --no-override --no-override -f ./env/prod.env ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run",
+        "db:generate:prod": "./node_modules/.bin/env-cmd --no-override --no-override -f ./env/prod.env ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:generate",
+        "db:revert:prod": "./node_modules/.bin/env-cmd --no-override -f ./env/prod.env ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:revert",
+        "docker:up": "./docker-dev-helper.sh --up",
+        "docker:up:hidden": "./docker-dev-helper.sh --up -d",
+        "docker:db:migrate": "./docker-dev-helper.sh --migrate",
+        "docker:test": "./docker-dev-helper.sh --test",
+        "docker:bash": "./docker-dev-helper.sh --bash",
+        "docker:stop": "./docker-dev-helper.sh --halt",
+        "docker:rebuild": "./docker-dev-helper.sh --rebuild",
+        "docker:destroy": "./docker-dev-helper.sh --destroy",
+        "postinstall": "husky install",
+        "prepack": "pinst --disable",
+        "postpack": "pinst --enable"
+    },
+    "lint-staged": {
+        "*.{ts,tsx}": [
+            "./node_modules/.bin/prettier --write",
+            "yarn test"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged && yarn lint && yarn build"
+        }
+    },
+    "dependencies": {
+        "@nestjs/common": "^9.0.0",
+        "@nestjs/core": "^9.0.0",
+        "@nestjs/passport": "^9.0.0",
+        "@nestjs/platform-express": "^9.0.0",
+        "@nestjs/swagger": "^6.1.4",
+        "@nestjs/typeorm": "^9.0.1",
+        "bcrypt": "^5.1.0",
+        "class-transformer": "^0.5.1",
+        "class-validator": "^0.13.2",
+        "compression": "^1.7.4",
+        "env-cmd": "^10.1.0",
+        "express-rate-limit": "^6.7.0",
+        "helmet": "^6.0.1",
+        "lodash": "^4.17.21",
+        "moment": "^2.29.4",
+        "passport": "^0.6.0",
+        "passport-http-bearer": "^1.0.1",
+        "passport-local": "^1.0.0",
+        "pg": "^8.8.0",
+        "reflect-metadata": "^0.1.13",
+        "rimraf": "^3.0.2",
+        "rxjs": "^7.6.0",
+        "swagger-ui-express": "^4.3.0",
+        "typeorm": "^0.2.45",
+        "uuid": "^8.3.2"
+    },
+    "devDependencies": {
+        "@nestjs/cli": "^9.0.0",
+        "@nestjs/schematics": "^9.0.0",
+        "@nestjs/testing": "^9.0.0",
+        "@types/express": "^4.17.13",
+        "@types/jest": "^27.5.0",
+        "@types/lodash": "^4.14.191",
+        "@types/node": "^18.11.12",
+        "@types/supertest": "^2.0.12",
+        "@typescript-eslint/eslint-plugin": "^5.46.0",
+        "@typescript-eslint/parser": "^5.46.0",
+        "eslint": "^8.29.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "husky": "^7.0.2",
+        "jest": "^29.3.1",
+        "jest-extended": "^3.2.0",
+        "lint-staged": "^13.1.0",
+        "prettier": "^2.8.1",
+        "supertest": "^6.3.3",
+        "ts-jest": "^29.0.3",
+        "ts-loader": "^9.4.2",
+        "ts-node": "^10.9.1",
+        "tsconfig-paths": "^4.1.1",
+        "typescript": "^4.4.3",
+        "express": "4.18.2",
+        "webpack": "^5.75.0"
+    },
+    "jest": {
+        "setupFilesAfterEnv": [
+            "jest-extended/all"
+        ],
+        "moduleFileExtensions": [
+            "js",
+            "json",
+            "ts"
+        ],
+        "rootDir": "src",
+        "testRegex": ".*\\.spec\\.ts$",
+        "transform": {
+            "^.+\\.(t|j)s$": "ts-jest"
+        },
+        "collectCoverageFrom": [
+            "**/*.(t|j)s"
+        ],
+        "coverageDirectory": "../coverage",
+        "testEnvironment": "node"
+    }
+}
