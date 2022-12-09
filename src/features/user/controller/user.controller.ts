@@ -11,17 +11,18 @@ import {
     Put
 } from "@nestjs/common";
 import { ApiTags, ApiCreatedResponse } from "@nestjs/swagger";
+import { AuthGuard } from "@nestjs/passport";
 
 import { AuthService } from "../../auth/services/auth.service";
 import { UserService } from "../services/user.service";
 
 import { CONFIG } from "../../../config";
 
-import { SuccessResponse, UserDto, UserGetResponse, UserPostResponse } from "./_types";
-import { Roles } from "../../../features/auth/roles/role.decorator";
+import { SuccessResponse, UserGetResponse, UserPostResponse } from "./_types";
+import { UserDto } from "../dto/user.dto";
+import { Roles } from "../../auth/guards/role.decorator";
 import { IPublicUserData, Role, User } from "../../../entities/User.entity";
-import { AuthGuard } from "@nestjs/passport";
-import { RoleGuard } from "../../../features/auth/roles/role.guard";
+import { RoleGuard } from "../../auth/guards/role.guard";
 
 @ApiTags("user")
 @Controller({ path: "user", version: "1" })

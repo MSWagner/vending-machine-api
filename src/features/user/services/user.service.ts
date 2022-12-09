@@ -3,9 +3,9 @@ import { Repository } from "typeorm";
 import { Injectable, Inject } from "@nestjs/common";
 
 import { Role, User } from "../../../entities/User.entity";
+import { UserDto } from "../dto/user.dto";
 
 import CONFIG from "../../../config";
-import { UserDto } from "../controller/_types";
 
 @Injectable()
 export class UserService {

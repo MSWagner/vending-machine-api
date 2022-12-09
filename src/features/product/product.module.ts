@@ -4,9 +4,10 @@ import { productProviders } from "./product.providers";
 
 import { DatabaseModule } from "../../shared/database/database.module";
 import { UserModule } from "../user/user.module";
+import { AuthModule } from "../auth/auth.module";
 
 @Module({
-    imports: [DatabaseModule, UserModule],
+    imports: [DatabaseModule, UserModule, AuthModule],
     providers: [...productProviders, ProductService],
     exports: [DatabaseModule, ProductService, ...productProviders]
 })

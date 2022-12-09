@@ -21,6 +21,13 @@ export const user3 = {
     role: "seller"
 };
 
+export const user4 = {
+    uid: "9eb7b12e-c294-496a-94d7-f95e700c54be",
+    isActive: true,
+    username: "user4@email.com",
+    role: "seller"
+};
+
 export const userInActive = {
     uid: "17f0263a-87b1-4760-90c1-2e596a514678",
     username: "userInActive@email.com",
@@ -44,6 +51,12 @@ export const accessTokenUser3Seller = {
     token: "0fa3f2c4-04e4-4d9e-b983-b2475b799d18",
     validUntil: "2050-08-07 23:45:22.501",
     user: user3.uid
+};
+
+export const accessTokenUser4Seller = {
+    token: "40ad79d4-e986-4022-a3ed-85b7760a690a",
+    validUntil: "2050-08-07 23:45:22.501",
+    user: user4.uid
 };
 
 export const invalidAccessToken = {
@@ -79,9 +92,17 @@ export const product2User3Seller = {
     seller: user3.uid
 };
 
+export const product1User4Seller = {
+    uid: "77eaa5ff-2fe1-461e-b3e7-e2fd9b405792",
+    productName: "product1Seller4",
+    cost: 100,
+    amountAvailable: 10,
+    seller: user4.uid
+};
+
 export const fixtureTrees = {
-    User: [user1, user2, user3, userInActive],
+    User: [user1, user2, user3, userInActive, user4],
     RefreshToken: [refreshToken1, invalidRefreshToken],
-    AccessToken: [accessToken1, accessTokenUser2, accessTokenUser3Seller, invalidAccessToken],
-    Product: [product1User3Seller, product2User3Seller]
+    AccessToken: [accessToken1, accessTokenUser2, accessTokenUser3Seller, invalidAccessToken, accessTokenUser4Seller],
+    Product: [product1User3Seller, product2User3Seller, product1User4Seller]
 };

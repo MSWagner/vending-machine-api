@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductService should find all products: AllProducts 1`] = `
+[
+  Product {
+    "amountAvailable": 10,
+    "cost": 100,
+    "createdAt": "createdAt",
+    "productName": "product1",
+    "uid": "uid",
+    "updatedAt": "updatedAt",
+  },
+  Product {
+    "amountAvailable": 1,
+    "cost": 10,
+    "createdAt": "createdAt",
+    "productName": "product2",
+    "uid": "uid",
+    "updatedAt": "updatedAt",
+  },
+  Product {
+    "amountAvailable": 10,
+    "cost": 100,
+    "createdAt": "createdAt",
+    "productName": "product1Seller4",
+    "uid": "uid",
+    "updatedAt": "updatedAt",
+  },
+]
+`;

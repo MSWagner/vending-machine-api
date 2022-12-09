@@ -1,39 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`User Controller /DELETE user - should successful delete user1 (buyer): User1PublicData 1`] = `
+exports[`UserController /DELETE user - should successful delete user1 (buyer): User1PublicData 1`] = `
 {
   "success": true,
 }
 `;
 
-exports[`User Controller /DELETE user - should successful delete user3 (seller): User3PublicData 1`] = `
+exports[`UserController /DELETE user - should successful delete user3 (seller): User3PublicData 1`] = `
 {
   "success": true,
 }
 `;
 
-exports[`User Controller /DELETE user - should throw an already deleted user: AlreadyDeletedError 1`] = `
+exports[`UserController /DELETE user - should throw an already deleted user: AlreadyDeletedError 1`] = `
 {
   "message": "Unauthorized",
   "statusCode": 401,
 }
 `;
 
-exports[`User Controller /DELETE user - should throw an error for no access: NoAccessError 1`] = `
+exports[`UserController /DELETE user - should throw an error for no access: NoAccessError 1`] = `
 {
   "message": "Unauthorized",
   "statusCode": 401,
 }
 `;
 
-exports[`User Controller /DELETE user - should throw an error invalid token: InvalidTokenError 1`] = `
+exports[`UserController /DELETE user - should throw an error invalid token: InvalidTokenError 1`] = `
 {
   "message": "Unauthorized",
   "statusCode": 401,
 }
 `;
 
-exports[`User Controller /GET user - should return the public data of user1 (buyer): User1PublicData 1`] = `
+exports[`UserController /GET user - should return the public data of user1 (buyer): User1PublicData 1`] = `
 {
   "deposit": 0,
   "role": "buyer",
@@ -41,35 +41,35 @@ exports[`User Controller /GET user - should return the public data of user1 (buy
 }
 `;
 
-exports[`User Controller /GET user - should return the public data of user3 (seller): User3PublicData 1`] = `
+exports[`UserController /GET user - should return the public data of user3 (seller): User3PublicData 1`] = `
 {
   "role": "seller",
   "username": "user3@email.com",
 }
 `;
 
-exports[`User Controller /GET user - should throw an already deleted user: AlreadyDeletedError 1`] = `
+exports[`UserController /GET user - should throw an already deleted user: AlreadyDeletedError 1`] = `
 {
   "message": "Unauthorized",
   "statusCode": 401,
 }
 `;
 
-exports[`User Controller /GET user - should throw an error for no access: NoAccessError 1`] = `
+exports[`UserController /GET user - should throw an error for no access: NoAccessError 1`] = `
 {
   "message": "Unauthorized",
   "statusCode": 401,
 }
 `;
 
-exports[`User Controller /GET user - should throw an error invalid token: InvalidTokenError 1`] = `
+exports[`UserController /GET user - should throw an error invalid token: InvalidTokenError 1`] = `
 {
   "message": "Unauthorized",
   "statusCode": 401,
 }
 `;
 
-exports[`User Controller /POST user - should register an new buyer user: RegisterCredentials 1`] = `
+exports[`UserController /POST user - should register an new buyer user: RegisterCredentials 1`] = `
 {
   "accessToken": "accessToken",
   "expiresIn": 86400000,
@@ -78,7 +78,7 @@ exports[`User Controller /POST user - should register an new buyer user: Registe
 }
 `;
 
-exports[`User Controller /POST user - should throw an error for a to short password: RegisterPasswordToShortError 1`] = `
+exports[`UserController /POST user - should throw an error for a to short password: RegisterPasswordToShortError 1`] = `
 {
   "error": "Bad Request",
   "message": [
@@ -88,7 +88,7 @@ exports[`User Controller /POST user - should throw an error for a to short passw
 }
 `;
 
-exports[`User Controller /POST user - should throw an error for a to short username: RegisterUsernameToShortError 1`] = `
+exports[`UserController /POST user - should throw an error for a to short username: RegisterUsernameToShortError 1`] = `
 {
   "error": "Bad Request",
   "message": [
@@ -98,14 +98,14 @@ exports[`User Controller /POST user - should throw an error for a to short usern
 }
 `;
 
-exports[`User Controller /POST user - should throw an error for a username conflict: RegisterUsernameConflictError 1`] = `
+exports[`UserController /POST user - should throw an error for a username conflict: RegisterUsernameConflictError 1`] = `
 {
   "message": "User with the given username already exists",
   "statusCode": 409,
 }
 `;
 
-exports[`User Controller /POST user - should throw an error for missing password: RegisterPasswordMissingError 1`] = `
+exports[`UserController /POST user - should throw an error for missing password: RegisterPasswordMissingError 1`] = `
 {
   "error": "Bad Request",
   "message": [
@@ -116,7 +116,7 @@ exports[`User Controller /POST user - should throw an error for missing password
 }
 `;
 
-exports[`User Controller /POST user - should throw an error for missing role: RegisterRoleMissingError 1`] = `
+exports[`UserController /POST user - should throw an error for missing role: RegisterRoleMissingError 1`] = `
 {
   "error": "Bad Request",
   "message": [
@@ -128,7 +128,7 @@ exports[`User Controller /POST user - should throw an error for missing role: Re
 }
 `;
 
-exports[`User Controller /POST user - should throw an error for missing username: RegisterUsernameMissingError 1`] = `
+exports[`UserController /POST user - should throw an error for missing username: RegisterUsernameMissingError 1`] = `
 {
   "error": "Bad Request",
   "message": [
@@ -139,7 +139,7 @@ exports[`User Controller /POST user - should throw an error for missing username
 }
 `;
 
-exports[`User Controller /POST user - should throw an error for not supported role: RegisterRoleNotSupportedError 1`] = `
+exports[`UserController /POST user - should throw an error for not supported role: RegisterRoleNotSupportedError 1`] = `
 {
   "error": "Bad Request",
   "message": [
@@ -149,7 +149,7 @@ exports[`User Controller /POST user - should throw an error for not supported ro
 }
 `;
 
-exports[`User Controller /PUT user - should throw an error for a to short password: UpdatePasswordToShortError 1`] = `
+exports[`UserController /PUT user - should throw an error for a to short password: UpdatePasswordToShortError 1`] = `
 {
   "error": "Bad Request",
   "message": [
@@ -159,7 +159,7 @@ exports[`User Controller /PUT user - should throw an error for a to short passwo
 }
 `;
 
-exports[`User Controller /PUT user - should throw an error for a to short username: UpdateUsernameToShortError 1`] = `
+exports[`UserController /PUT user - should throw an error for a to short username: UpdateUsernameToShortError 1`] = `
 {
   "error": "Bad Request",
   "message": [
@@ -169,14 +169,14 @@ exports[`User Controller /PUT user - should throw an error for a to short userna
 }
 `;
 
-exports[`User Controller /PUT user - should throw an error for a username conflict: UpdateUsernameConflictError 1`] = `
+exports[`UserController /PUT user - should throw an error for a username conflict: UpdateUsernameConflictError 1`] = `
 {
   "message": "User with the given username already exists",
   "statusCode": 409,
 }
 `;
 
-exports[`User Controller /PUT user - should throw an error for missing password: UpdatePasswordMissingError 1`] = `
+exports[`UserController /PUT user - should throw an error for missing password: UpdatePasswordMissingError 1`] = `
 {
   "error": "Bad Request",
   "message": [
@@ -187,7 +187,7 @@ exports[`User Controller /PUT user - should throw an error for missing password:
 }
 `;
 
-exports[`User Controller /PUT user - should throw an error for missing role: UpdateRoleMissingError 1`] = `
+exports[`UserController /PUT user - should throw an error for missing role: UpdateRoleMissingError 1`] = `
 {
   "error": "Bad Request",
   "message": [
@@ -199,7 +199,7 @@ exports[`User Controller /PUT user - should throw an error for missing role: Upd
 }
 `;
 
-exports[`User Controller /PUT user - should throw an error for missing username: UpdateUsernameMissingError 1`] = `
+exports[`UserController /PUT user - should throw an error for missing username: UpdateUsernameMissingError 1`] = `
 {
   "error": "Bad Request",
   "message": [
@@ -210,7 +210,7 @@ exports[`User Controller /PUT user - should throw an error for missing username:
 }
 `;
 
-exports[`User Controller /PUT user - should throw an error for not supported role: UpdateRoleNotSupportedError 1`] = `
+exports[`UserController /PUT user - should throw an error for not supported role: UpdateRoleNotSupportedError 1`] = `
 {
   "error": "Bad Request",
   "message": [
@@ -220,14 +220,14 @@ exports[`User Controller /PUT user - should throw an error for not supported rol
 }
 `;
 
-exports[`User Controller /PUT user - should update user1 username, password and role (to Seller): User1Updated 1`] = `
+exports[`UserController /PUT user - should update user1 username, password and role (to Seller): User1Updated 1`] = `
 {
   "role": "seller",
   "username": "user1@email.at-updated",
 }
 `;
 
-exports[`User Controller /PUT user - should update user3 username, password and role (to Buyer): User3Updated 1`] = `
+exports[`UserController /PUT user - should update user3 username, password and role (to Buyer): User3Updated 1`] = `
 {
   "deposit": 0,
   "role": "buyer",

@@ -3,6 +3,7 @@ import { Injectable, Inject } from "@nestjs/common";
 
 import { Product } from "../../../entities/Product.entity";
 import { User } from "../../../entities/User.entity";
+import { ProductUpsertDto } from "../dto/product.dto";
 
 import CONFIG from "../../../config";
 
@@ -13,37 +14,35 @@ export class ProductService {
         private readonly productRepository: Repository<Product>
     ) {}
 
-    async findOneProduct(uid: string): Promise<Product | undefined> {
-        return this.productRepository.findOne({ uid });
+    async findAll(): Promise<Product[]> {
+        return this.productRepository.find();
     }
 
-    async createProduct(seller: User, name: string, cost: number, amountAvailable: number): Promise<Product> {
+    async findOne(uid: string): Promise<Product | undefined> {
+        return this.productRepository.findOne({ where: { uid }, relations: ["seller"] });
+    }
+
+    async create(seller: User, upsertDto: ProductUpsertDto): Promise<Product> {
         const product = new Product();
 
-        product.productName = name;
-        product.cost = cost;
-        product.amountAvailable = amountAvailable;
+        product.productName = upsertDto.productName;
+        product.cost = upsertDto.cost;
+        product.amountAvailable = upsertDto.amountAvailable;
         product.seller = seller;
 
         return this.productRepository.save(product);
     }
 
-    async updateUser(
-        product: Product,
-        seller: User,
-        name: string,
-        cost: number,
-        amountAvailable: number
-    ): Promise<Product> {
-        product.productName = name;
-        product.cost = cost;
-        product.amountAvailable = amountAvailable;
+    async update(product: Product, seller: User, upsertDto: ProductUpsertDto): Promise<Product> {
+        product.productName = upsertDto.productName;
+        product.cost = upsertDto.cost;
+        product.amountAvailable = upsertDto.amountAvailable;
         product.seller = seller;
 
         return this.productRepository.save(product);
     }
 
-    async deleteUser(product: Product): Promise<Product> {
+    async delete(product: Product): Promise<Product> {
         return this.productRepository.remove(product);
     }
 }

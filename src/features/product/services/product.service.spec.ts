@@ -33,14 +33,22 @@ describe("ProductService", () => {
         done();
     });
 
+    it("should find all products", async () => {
+        const products = await service.findAll();
+
+        expect(products.length).toEqual(fixtures.fixtureTrees.Product.length);
+        const productsData = testService.replaceValues(products, ["UUID", "DATE"]);
+        expect(productsData).toMatchSnapshot("AllProducts");
+    });
+
     it("should find product1", async () => {
-        const product1 = await service.findOneProduct(fixtures.product1User3Seller.uid);
+        const product1 = await service.findOne(fixtures.product1User3Seller.uid);
 
         expect(product1.uid).toEqual(fixtures.product1User3Seller.uid);
     });
 
     it("should not find some product with unknown product uuid", async () => {
-        const user = await service.findOneProduct("ad9ee500-c03e-4d4e-9ef2-3669ab17b023");
+        const user = await service.findOne("ad9ee500-c03e-4d4e-9ef2-3669ab17b023");
 
         expect(user).toBeUndefined();
     });
@@ -51,7 +59,11 @@ describe("ProductService", () => {
         const productCountBefore = await Product.count({ where: { productName: "testProduct1" } });
         expect(productCountBefore).toEqual(0);
 
-        const newProduct = await service.createProduct(seller, "testProduct1", 10, 100);
+        const newProduct = await service.create(seller, {
+            productName: "testProduct1",
+            cost: 10,
+            amountAvailable: 100
+        });
         expect(newProduct.productName).toEqual("testProduct1");
         expect(newProduct.cost).toEqual(10);
         expect(newProduct.amountAvailable).toEqual(100);
@@ -68,7 +80,11 @@ describe("ProductService", () => {
         const productCountBefore = await Product.count({ where: { productName: "testProduct1" } });
         expect(productCountBefore).toEqual(0);
 
-        const newProduct = await service.updateUser(product1, seller, "testProduct1Updated", 20, 200);
+        const newProduct = await service.update(product1, seller, {
+            productName: "testProduct1Updated",
+            cost: 20,
+            amountAvailable: 200
+        });
         expect(newProduct.uid).toEqual(product1.uid);
         expect(newProduct.productName).toEqual("testProduct1Updated");
         expect(newProduct.cost).toEqual(20);
@@ -83,7 +99,7 @@ describe("ProductService", () => {
         const product1 = await Product.findOne(fixtures.product1User3Seller.uid);
         expect(product1).not.toBeUndefined();
 
-        await service.deleteUser(product1);
+        await service.delete(product1);
 
         const removedProduct = await Product.findOne(fixtures.product1User3Seller.uid);
         expect(removedProduct).toBeUndefined();

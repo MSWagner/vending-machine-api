@@ -20,6 +20,8 @@ export interface IPublicProductData {
     productName: string;
     cost: number;
     amountAvailable: number;
+    createdAt: Date;
+    updatedAt: Date;
 }
 
 @Entity()
@@ -54,7 +56,9 @@ export class Product extends BaseEntity {
             uid: this.uid,
             productName: this.productName,
             cost: this.cost,
-            amountAvailable: this.amountAvailable
+            amountAvailable: this.amountAvailable,
+            createdAt: this.createdAt,
+            updatedAt: this.updatedAt
         };
     }
 }

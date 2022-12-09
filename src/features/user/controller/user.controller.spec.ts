@@ -14,7 +14,7 @@ import { Role, User } from "../../../entities/User.entity";
 
 import * as fixtures from "../../../shared/test/fixtures";
 
-describe("User Controller", () => {
+describe("UserController", () => {
     let app: INestApplication;
     let testService: TestService;
 

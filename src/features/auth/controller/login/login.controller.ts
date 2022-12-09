@@ -7,9 +7,9 @@ import { AuthService } from "../../services/auth.service";
 
 import { CONFIG } from "../../../../config";
 
-import { Roles } from "../../roles/role.decorator";
+import { Roles } from "../../guards/role.decorator";
 import { Role } from "../../../../entities/User.entity";
-import { RoleGuard } from "../../roles/role.guard";
+import { RoleGuard } from "../../guards/role.guard";
 
 @ApiTags("auth")
 @UseGuards(AuthGuard("local"))

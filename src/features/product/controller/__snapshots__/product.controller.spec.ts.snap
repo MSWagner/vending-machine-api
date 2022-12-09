@@ -1,0 +1,344 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductController /DELETE products/uid - should successful delete product1: DeleteProduct1 1`] = `
+{
+  "success": true,
+}
+`;
+
+exports[`ProductController /DELETE products/uid - should throw an error for no access: NoAccessError 1`] = `
+{
+  "message": "Unauthorized",
+  "statusCode": 401,
+}
+`;
+
+exports[`ProductController /DELETE products/uid - should throw an not owner request: NotOwnerDeleteError 1`] = `
+{
+  "message": "You are not the owner of this product.",
+  "statusCode": 401,
+}
+`;
+
+exports[`ProductController /DELETE user - should throw an already deleted product: AlreadyDeletedError 1`] = `
+{
+  "message": "Product could not be found.",
+  "statusCode": 404,
+}
+`;
+
+exports[`ProductController /GET products - should return all products for buyer users: AllProductsResponse 1`] = `
+[
+  {
+    "amountAvailable": 10,
+    "cost": 100,
+    "createdAt": "createdAt",
+    "productName": "product1",
+    "uid": "uid",
+    "updatedAt": "updatedAt",
+  },
+  {
+    "amountAvailable": 1,
+    "cost": 10,
+    "createdAt": "createdAt",
+    "productName": "product2",
+    "uid": "uid",
+    "updatedAt": "updatedAt",
+  },
+  {
+    "amountAvailable": 10,
+    "cost": 100,
+    "createdAt": "createdAt",
+    "productName": "product1Seller4",
+    "uid": "uid",
+    "updatedAt": "updatedAt",
+  },
+]
+`;
+
+exports[`ProductController /GET products - should return all products for seller users: AllProductsResponse 1`] = `
+[
+  {
+    "amountAvailable": 10,
+    "cost": 100,
+    "createdAt": "createdAt",
+    "productName": "product1",
+    "uid": "uid",
+    "updatedAt": "updatedAt",
+  },
+  {
+    "amountAvailable": 1,
+    "cost": 10,
+    "createdAt": "createdAt",
+    "productName": "product2",
+    "uid": "uid",
+    "updatedAt": "updatedAt",
+  },
+  {
+    "amountAvailable": 10,
+    "cost": 100,
+    "createdAt": "createdAt",
+    "productName": "product1Seller4",
+    "uid": "uid",
+    "updatedAt": "updatedAt",
+  },
+]
+`;
+
+exports[`ProductController /GET products - should return all products for unauthenticated users: AllProductsResponse 1`] = `
+[
+  {
+    "amountAvailable": 10,
+    "cost": 100,
+    "createdAt": "createdAt",
+    "productName": "product1",
+    "uid": "uid",
+    "updatedAt": "updatedAt",
+  },
+  {
+    "amountAvailable": 1,
+    "cost": 10,
+    "createdAt": "createdAt",
+    "productName": "product2",
+    "uid": "uid",
+    "updatedAt": "updatedAt",
+  },
+  {
+    "amountAvailable": 10,
+    "cost": 100,
+    "createdAt": "createdAt",
+    "productName": "product1Seller4",
+    "uid": "uid",
+    "updatedAt": "updatedAt",
+  },
+]
+`;
+
+exports[`ProductController /GET products - should return an empty array if no products available: EmptyProductsResponse 1`] = `[]`;
+
+exports[`ProductController /GET products/:uid - should return products1 for buyer users: Product1Response 1`] = `
+{
+  "amountAvailable": 10,
+  "cost": 100,
+  "createdAt": "createdAt",
+  "productName": "product1",
+  "uid": "uid",
+  "updatedAt": "updatedAt",
+}
+`;
+
+exports[`ProductController /GET products/:uid - should return products1 for seller users: Product1Response 1`] = `
+{
+  "amountAvailable": 10,
+  "cost": 100,
+  "createdAt": "createdAt",
+  "productName": "product1",
+  "uid": "uid",
+  "updatedAt": "updatedAt",
+}
+`;
+
+exports[`ProductController /GET products/:uid - should return products1 for unauthenticated users: Product1Response 1`] = `
+{
+  "amountAvailable": 10,
+  "cost": 100,
+  "createdAt": "createdAt",
+  "productName": "product1",
+  "uid": "uid",
+  "updatedAt": "updatedAt",
+}
+`;
+
+exports[`ProductController /GET products/:uid - should throw an 404 error for not found product: ErrorProductNotFoundResponse 1`] = `
+{
+  "message": "Product could not be found.",
+  "statusCode": 404,
+}
+`;
+
+exports[`ProductController /POST products - should create a new product for a authenticated seller: NewProduct1CreatedResponse 1`] = `
+{
+  "amountAvailable": 9,
+  "cost": 25,
+  "createdAt": "createdAt",
+  "productName": "newProduct1",
+  "uid": "uid",
+  "updatedAt": "updatedAt",
+}
+`;
+
+exports[`ProductController /POST products - should throw an error for amountAvailable is to low: amountAvailableLowPostError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "amountAvailable must not be less than 0",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`ProductController /POST products - should throw an error for authentictated buyer requests: BuyerPostError 1`] = `
+{
+  "error": "Forbidden",
+  "message": "Forbidden resource",
+  "statusCode": 403,
+}
+`;
+
+exports[`ProductController /POST products - should throw an error for cost is not be in multiples of 5: CostNotMultipleOf5PostError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "cost must be divisible by 5",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`ProductController /POST products - should throw an error for cost is to low: CostToLowPostError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "cost must not be less than 5",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`ProductController /POST products - should throw an error for missing amountAvailable: AmountAvailableMissingPostError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "amountAvailable must not be less than 0",
+    "amountAvailable must be an integer number",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`ProductController /POST products - should throw an error for missing cost: CostMissingPostError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "cost must be divisible by 5",
+    "cost must not be less than 5",
+    "cost must be an integer number",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`ProductController /POST products - should throw an error for missing productName: ProductNameMissingPostError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "productName must be longer than or equal to 3 characters",
+    "productName must be a string",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`ProductController /POST products - should throw an error for unauthorized requests: UnauthorizedPostError 1`] = `
+{
+  "message": "Unauthorized",
+  "statusCode": 401,
+}
+`;
+
+exports[`ProductController /PUT products/uid  - should throw an error for a not owner seller requests: NotOwnerPutError 1`] = `
+{
+  "message": "You are not the owner of this product.",
+  "statusCode": 401,
+}
+`;
+
+exports[`ProductController /PUT products/uid  - should throw an error for authentictated buyer requests: BuyerPutError 1`] = `
+{
+  "error": "Forbidden",
+  "message": "Forbidden resource",
+  "statusCode": 403,
+}
+`;
+
+exports[`ProductController /PUT products/uid  - should throw an error for unauthorized requests: UnauthorizedPutError 1`] = `
+{
+  "message": "Unauthorized",
+  "statusCode": 401,
+}
+`;
+
+exports[`ProductController /PUT products/uid - should throw an error for amountAvailable is to low: amountAvailableLowPutError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "amountAvailable must not be less than 0",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`ProductController /PUT products/uid - should throw an error for cost is not be in multiples of 5: CostNotMultipleOf5PutError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "cost must be divisible by 5",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`ProductController /PUT products/uid - should throw an error for cost is to low: CostToLowPutError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "cost must not be less than 5",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`ProductController /PUT products/uid - should throw an error for missing amountAvailable: AmountAvailableMissingPutError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "amountAvailable must not be less than 0",
+    "amountAvailable must be an integer number",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`ProductController /PUT products/uid - should throw an error for missing cost: CostMissingPutError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "cost must be divisible by 5",
+    "cost must not be less than 5",
+    "cost must be an integer number",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`ProductController /PUT products/uid - should throw an error for missing productName: ProductNameMissingPutError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "productName must be longer than or equal to 3 characters",
+    "productName must be a string",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`ProductController /PUT products/uid - should update a product1 from user3 (seller): NewProduct1UpdatedResponse 1`] = `
+{
+  "amountAvailable": 9,
+  "cost": 25,
+  "createdAt": "createdAt",
+  "productName": "newProduct1Name",
+  "uid": "uid",
+  "updatedAt": "updatedAt",
+}
+`;
