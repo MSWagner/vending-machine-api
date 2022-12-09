@@ -5,6 +5,7 @@ import { Injectable, Inject } from "@nestjs/common";
 import { Role, User } from "../../../entities/User.entity";
 
 import CONFIG from "../../../config";
+import { UserDto } from "../controller/_types";
 
 @Injectable()
 export class UserService {
@@ -33,7 +34,11 @@ export class UserService {
         return this.userRepository.save(user);
     }
 
-    async updateUser(user: User): Promise<User> {
+    async updateUser(user: User, updateDto: UserDto): Promise<User> {
+        user.username = updateDto.username;
+        user.role = updateDto.role;
+        user.passwordHash = await this.getHash(updateDto.password);
+
         return this.userRepository.save(user);
     }
 

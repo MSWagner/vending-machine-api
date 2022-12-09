@@ -89,7 +89,7 @@ describe("UserService", () => {
 
         user.deposit = 100;
 
-        await service.updateUser(user);
+        await service.updateUser(user, { ...user, password: "testPassword" });
 
         const updatedUser = await User.findOne({ where: { username: fixtures.user1.username } });
         expect(updatedUser.deposit).toBe(100);

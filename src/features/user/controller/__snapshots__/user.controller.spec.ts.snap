@@ -1,5 +1,74 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`User Controller /DELETE user - should successful delete user1 (buyer): User1PublicData 1`] = `
+{
+  "success": true,
+}
+`;
+
+exports[`User Controller /DELETE user - should successful delete user3 (seller): User3PublicData 1`] = `
+{
+  "success": true,
+}
+`;
+
+exports[`User Controller /DELETE user - should throw an already deleted user: AlreadyDeletedError 1`] = `
+{
+  "message": "Unauthorized",
+  "statusCode": 401,
+}
+`;
+
+exports[`User Controller /DELETE user - should throw an error for no access: NoAccessError 1`] = `
+{
+  "message": "Unauthorized",
+  "statusCode": 401,
+}
+`;
+
+exports[`User Controller /DELETE user - should throw an error invalid token: InvalidTokenError 1`] = `
+{
+  "message": "Unauthorized",
+  "statusCode": 401,
+}
+`;
+
+exports[`User Controller /GET user - should return the public data of user1 (buyer): User1PublicData 1`] = `
+{
+  "deposit": 0,
+  "role": "buyer",
+  "username": "user1@email.at",
+}
+`;
+
+exports[`User Controller /GET user - should return the public data of user3 (seller): User3PublicData 1`] = `
+{
+  "role": "seller",
+  "username": "user3@email.com",
+}
+`;
+
+exports[`User Controller /GET user - should throw an already deleted user: AlreadyDeletedError 1`] = `
+{
+  "message": "Unauthorized",
+  "statusCode": 401,
+}
+`;
+
+exports[`User Controller /GET user - should throw an error for no access: NoAccessError 1`] = `
+{
+  "message": "Unauthorized",
+  "statusCode": 401,
+}
+`;
+
+exports[`User Controller /GET user - should throw an error invalid token: InvalidTokenError 1`] = `
+{
+  "message": "Unauthorized",
+  "statusCode": 401,
+}
+`;
+
 exports[`User Controller /POST user - should register an new buyer user: RegisterCredentials 1`] = `
 {
   "accessToken": "accessToken",
@@ -14,9 +83,6 @@ exports[`User Controller /POST user - should throw an error for a to short passw
   "error": "Bad Request",
   "message": [
     "password must be longer than or equal to 6 characters",
-    "role must be a valid enum value",
-    "role must be longer than or equal to 3 characters",
-    "role must be a string",
   ],
   "statusCode": 400,
 }
@@ -27,9 +93,6 @@ exports[`User Controller /POST user - should throw an error for a to short usern
   "error": "Bad Request",
   "message": [
     "username must be longer than or equal to 3 characters",
-    "role must be a valid enum value",
-    "role must be longer than or equal to 3 characters",
-    "role must be a string",
   ],
   "statusCode": 400,
 }
@@ -48,9 +111,6 @@ exports[`User Controller /POST user - should throw an error for missing password
   "message": [
     "password must be longer than or equal to 6 characters",
     "password must be a string",
-    "role must be a valid enum value",
-    "role must be longer than or equal to 3 characters",
-    "role must be a string",
   ],
   "statusCode": 400,
 }
@@ -74,9 +134,6 @@ exports[`User Controller /POST user - should throw an error for missing username
   "message": [
     "username must be longer than or equal to 3 characters",
     "username must be a string",
-    "role must be a valid enum value",
-    "role must be longer than or equal to 3 characters",
-    "role must be a string",
   ],
   "statusCode": 400,
 }
@@ -89,5 +146,91 @@ exports[`User Controller /POST user - should throw an error for not supported ro
     "role must be a valid enum value",
   ],
   "statusCode": 400,
+}
+`;
+
+exports[`User Controller /PUT user - should throw an error for a to short password: UpdatePasswordToShortError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "password must be longer than or equal to 6 characters",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`User Controller /PUT user - should throw an error for a to short username: UpdateUsernameToShortError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "username must be longer than or equal to 3 characters",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`User Controller /PUT user - should throw an error for a username conflict: UpdateUsernameConflictError 1`] = `
+{
+  "message": "User with the given username already exists",
+  "statusCode": 409,
+}
+`;
+
+exports[`User Controller /PUT user - should throw an error for missing password: UpdatePasswordMissingError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "password must be longer than or equal to 6 characters",
+    "password must be a string",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`User Controller /PUT user - should throw an error for missing role: UpdateRoleMissingError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "role must be a valid enum value",
+    "role must be longer than or equal to 3 characters",
+    "role must be a string",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`User Controller /PUT user - should throw an error for missing username: UpdateUsernameMissingError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "username must be longer than or equal to 3 characters",
+    "username must be a string",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`User Controller /PUT user - should throw an error for not supported role: UpdateRoleNotSupportedError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "role must be a valid enum value",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`User Controller /PUT user - should update user1 username, password and role (to Seller): User1Updated 1`] = `
+{
+  "role": "seller",
+  "username": "user1@email.at-updated",
+}
+`;
+
+exports[`User Controller /PUT user - should update user3 username, password and role (to Buyer): User3Updated 1`] = `
+{
+  "deposit": 0,
+  "role": "buyer",
+  "username": "user3@email.com-updated",
 }
 `;

@@ -15,6 +15,13 @@ export enum Role {
     Buyer = "buyer",
     Seller = "seller"
 }
+
+export interface IPublicUserData {
+    username: string;
+    deposit?: number;
+    role: Role;
+}
+
 @Entity()
 export class User extends BaseEntity {
     @PrimaryGeneratedColumn("uuid")
@@ -46,4 +53,12 @@ export class User extends BaseEntity {
 
     @UpdateDateColumn()
     updatedAt: Date;
+
+    get publicData(): IPublicUserData {
+        return {
+            username: this.username,
+            ...(this.role === Role.Buyer ? { deposit: this.deposit } : {}),
+            role: this.role
+        };
+    }
 }
