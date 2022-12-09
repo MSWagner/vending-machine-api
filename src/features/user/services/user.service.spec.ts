@@ -32,13 +32,13 @@ describe("UserService", () => {
     });
 
     it("should find user1", async () => {
-        const user1 = await service.findOne(fixtures.user1.username);
+        const user1 = await service.findOneUser(fixtures.user1.username);
 
         expect(user1.uid).toEqual(fixtures.user1.uid);
     });
 
     it("should not find some user with unknown username", async () => {
-        const user = await service.findOne("unknown");
+        const user = await service.findOneUser("unknown");
 
         expect(user).toBeUndefined();
     });
@@ -101,7 +101,7 @@ describe("UserService", () => {
 
         await service.deleteUser(user);
 
-        const updatedUser = await User.findOne({ where: { username: fixtures.user1.username } });
-        expect(updatedUser).toBeUndefined();
+        const removedUser = await User.findOne({ where: { username: fixtures.user1.username } });
+        expect(removedUser).toBeUndefined();
     });
 });

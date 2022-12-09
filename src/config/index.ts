@@ -15,7 +15,7 @@ export const CONFIG = {
         defaultUserRepoName: "USER_REPOSITORY",
         defaultAccessTokenRepoName: "ACCESS_TOKEN_REPOSITORY",
         defaultRefreshTokenRepoName: "REFRESH_TOKEN_REPOSITORY",
-        defaultPushTokenRepoName: "PUSH_TOKEN_REPOSITORY"
+        defaultProductRepoName: "PRODUCT_REPOSITORY"
     }
 };
 

@@ -112,6 +112,11 @@ exports[`TestService should return all entities: DatabaseEntitiyList 1`] = `
     "tableName": "access_token",
   },
   {
+    "name": "Product",
+    "order": 3,
+    "tableName": "product",
+  },
+  {
     "name": "User",
     "order": 0,
     "tableName": "user",

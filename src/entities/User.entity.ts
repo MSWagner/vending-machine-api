@@ -10,6 +10,7 @@ import {
 
 import { RefreshToken } from "./RefreshToken.entity";
 import { AccessToken } from "./AccessToken.entity";
+import { Product } from "./Product.entity";
 
 export enum Role {
     Buyer = "buyer",
@@ -47,6 +48,9 @@ export class User extends BaseEntity {
 
     @OneToMany((_type) => AccessToken, (accessToken) => accessToken.user)
     accessToken: AccessToken[];
+
+    @OneToMany((_type) => Product, (product) => product.seller)
+    products: Product[];
 
     @CreateDateColumn()
     createdAt: Date;

@@ -63,8 +63,25 @@ export const invalidRefreshToken = {
     user: user2.uid
 };
 
+export const product1User3Seller = {
+    uid: "a3b85b96-eae9-43ed-b152-71a33b7520ff",
+    productName: "product1",
+    cost: 100,
+    amountAvailable: 10,
+    seller: user3.uid
+};
+
+export const product2User3Seller = {
+    uid: "ec8fa915-361d-44de-be9f-b79c6f6e696c",
+    productName: "product2",
+    cost: 10,
+    amountAvailable: 1,
+    seller: user3.uid
+};
+
 export const fixtureTrees = {
     User: [user1, user2, user3, userInActive],
     RefreshToken: [refreshToken1, invalidRefreshToken],
-    AccessToken: [accessToken1, accessTokenUser2, accessTokenUser3Seller, invalidAccessToken]
+    AccessToken: [accessToken1, accessTokenUser2, accessTokenUser3Seller, invalidAccessToken],
+    Product: [product1User3Seller, product2User3Seller]
 };

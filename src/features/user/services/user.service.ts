@@ -20,7 +20,7 @@ export class UserService {
         return bcrypt.hash(password, this.saltRounds);
     }
 
-    async findOne(username: string): Promise<User | undefined> {
+    async findOneUser(username: string): Promise<User | undefined> {
         return this.userRepository.findOne({ username });
     }
 
