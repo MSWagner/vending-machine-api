@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AuthService should return validated user1 with token: ValidatedUser1WithToken 1`] = `
+User {
+  "createdAt": "createdAt",
+  "deposit": 0,
+  "isActive": true,
+  "passwordHash": "$2b$10$n8McQmLm6U/RXlRb9HxNEOgurQecAokxI2oCoumlSOlOj4M.aU59K",
+  "role": "buyer",
+  "uid": "0961866f-ff60-4219-973c-109eecfa52bd",
+  "updatedAt": "updatedAt",
+  "username": "user1@email.at",
+}
+`;
+
+exports[`AuthService should return validated user1 with user: ValidatedUser1WithUser 1`] = `
+User {
+  "createdAt": "createdAt",
+  "deposit": 0,
+  "isActive": true,
+  "passwordHash": "$2b$10$n8McQmLm6U/RXlRb9HxNEOgurQecAokxI2oCoumlSOlOj4M.aU59K",
+  "role": "buyer",
+  "uid": "0961866f-ff60-4219-973c-109eecfa52bd",
+  "updatedAt": "updatedAt",
+  "username": "user1@email.at",
+}
+`;
+
+exports[`AuthService should return validated user3 as seller with token: ValidatedUser3SellerWithToken 1`] = `
+User {
+  "createdAt": "createdAt",
+  "deposit": 0,
+  "isActive": true,
+  "passwordHash": null,
+  "role": "seller",
+  "uid": "435c0a53-9e6b-488a-9d1c-582b108ed3e7",
+  "updatedAt": "updatedAt",
+  "username": "user3@email.com",
+}
+`;

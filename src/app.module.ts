@@ -2,13 +2,10 @@ import { Module } from "@nestjs/common";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
 
-import { DatabaseModule } from "./services/database/database.module";
-import { AuthApiModule } from "./api/auth-api/auth-api.module";
-import { PushNotificationModule } from "./services/push-notification/push-notification.module";
-import { PushNotificationApiModule } from "./api/push-notification-api/push-notification-api.module";
+import { DatabaseModule } from "./shared/database/database.module";
 
 @Module({
-    imports: [DatabaseModule, AuthApiModule, PushNotificationModule, PushNotificationApiModule],
+    imports: [DatabaseModule],
     controllers: [AppController],
     providers: [AppService]
 })

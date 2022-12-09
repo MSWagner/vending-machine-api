@@ -10,10 +10,11 @@ import {
 
 import { RefreshToken } from "./RefreshToken.entity";
 import { AccessToken } from "./AccessToken.entity";
-import { UserPermission } from "./UserPermission.entity";
-import { PermissionScope } from "./Permission.entity";
-import { PushToken } from "./PushToken.entity";
 
+export enum Role {
+    Buyer = "buyer",
+    Seller = "seller"
+}
 @Entity()
 export class User extends BaseEntity {
     @PrimaryGeneratedColumn("uuid")
@@ -28,25 +29,21 @@ export class User extends BaseEntity {
     @Column({ type: "boolean", default: false })
     isActive: boolean;
 
+    @Column({ type: "int", nullable: false, default: 0 })
+    deposit: number;
+
+    @Column({ type: "text", nullable: false })
+    role: Role;
+
     @OneToMany((_type) => RefreshToken, (refreshToken) => refreshToken.user)
     refreshTokens: RefreshToken[];
 
     @OneToMany((_type) => AccessToken, (accessToken) => accessToken.user)
     accessToken: AccessToken[];
 
-    @OneToMany((_type) => UserPermission, (userPermissions) => userPermissions.user, { eager: true })
-    userPermissions: UserPermission[];
-
-    @OneToMany((_type) => PushToken, (pushToken) => pushToken.user, { eager: true })
-    pushTokens: UserPermission[];
-
     @CreateDateColumn()
     createdAt: Date;
 
     @UpdateDateColumn()
     updatedAt: Date;
-
-    get permissions(): PermissionScope[] {
-        return this.userPermissions.map((userPermission) => userPermission.permission.scope);
-    }
 }
