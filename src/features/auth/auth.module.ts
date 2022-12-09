@@ -11,8 +11,8 @@ import { PassportModule } from "@nestjs/passport";
 
 import { accessTokenProviders } from "./providers/accessTokenProviders";
 import { refreshTokenProviders } from "./providers/refreshTokenProviders";
-import { LoginController } from "./api/login/login.controller";
-import { RefreshTokenController } from "./api/refresh-token/refresh-token.controller";
+import { LoginController } from "./controller/login/login.controller";
+import { RefreshTokenController } from "./controller/refresh-token/refresh-token.controller";
 
 @Module({
     imports: [UserModule, PassportModule],

@@ -8,7 +8,7 @@ import { accessTokenProviders } from "../providers/accessTokenProviders";
 import { refreshTokenProviders } from "../providers/refreshTokenProviders";
 
 import { userProviders } from "../../user/user.providers";
-import { UserService } from "../../user/user.service";
+import { UserService } from "../../../features/user/services/user.service";
 
 import { User } from "../../../entities/User.entity";
 import { AccessToken } from "../../../entities/AccessToken.entity";

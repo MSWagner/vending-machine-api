@@ -5,7 +5,7 @@ import * as _ from "lodash";
 import { Injectable, Inject } from "@nestjs/common";
 import { Repository } from "typeorm";
 
-import { UserService } from "../../user/user.service";
+import { UserService } from "../../../features/user/services/user.service";
 
 import { User } from "../../../entities/User.entity";
 import { AccessToken } from "../../../entities/AccessToken.entity";

@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User Controller /POST user - should register an new buyer user: RegisterCredentials 1`] = `
+{
+  "accessToken": "accessToken",
+  "expiresIn": 86400000,
+  "refreshToken": "refreshToken",
+  "tokenType": "Bearer",
+}
+`;
+
+exports[`User Controller /POST user - should throw an error for a to short password: RegisterPasswordToShortError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "password must be longer than or equal to 6 characters",
+    "role must be a valid enum value",
+    "role must be longer than or equal to 3 characters",
+    "role must be a string",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`User Controller /POST user - should throw an error for a to short username: RegisterUsernameToShortError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "username must be longer than or equal to 3 characters",
+    "role must be a valid enum value",
+    "role must be longer than or equal to 3 characters",
+    "role must be a string",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`User Controller /POST user - should throw an error for a username conflict: RegisterUsernameConflictError 1`] = `
+{
+  "message": "User with the given username already exists",
+  "statusCode": 409,
+}
+`;
+
+exports[`User Controller /POST user - should throw an error for missing password: RegisterPasswordMissingError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "password must be longer than or equal to 6 characters",
+    "password must be a string",
+    "role must be a valid enum value",
+    "role must be longer than or equal to 3 characters",
+    "role must be a string",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`User Controller /POST user - should throw an error for missing role: RegisterRoleMissingError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "role must be a valid enum value",
+    "role must be longer than or equal to 3 characters",
+    "role must be a string",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`User Controller /POST user - should throw an error for missing username: RegisterUsernameMissingError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "username must be longer than or equal to 3 characters",
+    "username must be a string",
+    "role must be a valid enum value",
+    "role must be longer than or equal to 3 characters",
+    "role must be a string",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`User Controller /POST user - should throw an error for not supported role: RegisterRoleNotSupportedError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "role must be a valid enum value",
+  ],
+  "statusCode": 400,
+}
+`;

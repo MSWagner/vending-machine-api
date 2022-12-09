@@ -1,14 +1,14 @@
 import * as bcrypt from "bcrypt";
 import { Test, TestingModule } from "@nestjs/testing";
 
-import { TestModule } from "../../shared/test/test.module";
-import { TestService } from "../../shared/test/test.service";
+import { TestModule } from "../../../shared/test/test.module";
+import { TestService } from "../../../shared/test/test.service";
 
 import { UserService } from "./user.service";
-import { userProviders } from "./user.providers";
-import { Role } from "../../entities/User.entity";
+import { userProviders } from "../user.providers";
+import { Role, User } from "../../../entities/User.entity";
 
-import * as fixtures from "../../shared/test/fixtures";
+import * as fixtures from "../../../shared/test/fixtures";
 
 describe("UserService", () => {
     let service: UserService;
@@ -81,5 +81,27 @@ describe("UserService", () => {
 
             expect(errorMessage).toInclude("duplicate key value violates unique constraint");
         }
+    });
+
+    it("should update user1 deposit", async () => {
+        const user = await User.findOne({ where: { username: fixtures.user1.username } });
+        expect(user.deposit).toBe(0);
+
+        user.deposit = 100;
+
+        await service.updateUser(user);
+
+        const updatedUser = await User.findOne({ where: { username: fixtures.user1.username } });
+        expect(updatedUser.deposit).toBe(100);
+    });
+
+    it("should delete user1", async () => {
+        const user = await User.findOne({ where: { username: fixtures.user1.username } });
+        expect(user).not.toBeUndefined();
+
+        await service.deleteUser(user);
+
+        const updatedUser = await User.findOne({ where: { username: fixtures.user1.username } });
+        expect(updatedUser).toBeUndefined();
     });
 });

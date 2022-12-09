@@ -2,9 +2,9 @@ import * as bcrypt from "bcrypt";
 import { Repository } from "typeorm";
 import { Injectable, Inject } from "@nestjs/common";
 
-import { Role, User } from "../../entities/User.entity";
+import { Role, User } from "../../../entities/User.entity";
 
-import CONFIG from "../../config";
+import CONFIG from "../../../config";
 
 @Injectable()
 export class UserService {
