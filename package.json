@@ -45,8 +45,7 @@
     },
     "lint-staged": {
         "*.{ts,tsx}": [
-            "./node_modules/.bin/prettier --write",
-            "yarn test"
+            "./node_modules/.bin/prettier --write"
         ]
     },
     "husky": {
