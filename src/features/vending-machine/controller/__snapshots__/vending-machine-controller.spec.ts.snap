@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VendigMachineController /POST buy - should return an error for a seller request: SellerErrorResponse 1`] = `
+{
+  "error": "Forbidden",
+  "message": "Forbidden resource",
+  "statusCode": 403,
+}
+`;
+
+exports[`VendigMachineController /POST buy - should return an error for not authenticated: NotAuthenticatedResponse 1`] = `
+{
+  "message": "Unauthorized",
+  "statusCode": 401,
+}
+`;
+
+exports[`VendigMachineController /POST buy - should throw an error for not enough deposit: NotEnoughDepositResponse 1`] = `
+{
+  "message": "Insufficient deposit",
+  "statusCode": 400,
+}
+`;
+
+exports[`VendigMachineController /POST buy - should throw an error for not enough products available: NotEnoughProductsAvailableResponse 1`] = `
+{
+  "message": "Not enough products available",
+  "statusCode": 400,
+}
+`;
+
+exports[`VendigMachineController /POST buy - should throw an error for product not found: ProductNotFoundResponse 1`] = `
+{
+  "message": "Product not found",
+  "statusCode": 404,
+}
+`;
+
+exports[`VendigMachineController /POST buy - user1 should deposit 100 and buy product2 for 10 with a change of 90: BuyProduct2SuccessfulResponse 1`] = `
+{
+  "change": [
+    50,
+    20,
+    20,
+  ],
+  "product": {
+    "amountAvailable": 0,
+    "cost": 10,
+    "createdAt": "createdAt",
+    "productName": "product2",
+    "uid": "uid",
+    "updatedAt": "updatedAt",
+  },
+  "spent": 10,
+}
+`;
+
+exports[`VendigMachineController /POST buy - user1 should deposit 200 and buy 2 product1 for 200 with a change of 0: BuyProduct1TwiceSuccessfulResponse 1`] = `
+{
+  "change": [],
+  "product": {
+    "amountAvailable": 8,
+    "cost": 100,
+    "createdAt": "createdAt",
+    "productName": "product1",
+    "uid": "uid",
+    "updatedAt": "updatedAt",
+  },
+  "spent": 200,
+}
+`;
+
+exports[`VendigMachineController /POST deposit - should return an error for a seller request: SellerErrorResponse 1`] = `
+{
+  "error": "Forbidden",
+  "message": "Forbidden resource",
+  "statusCode": 403,
+}
+`;
+
+exports[`VendigMachineController /POST deposit - should return an error for not authenticated: NotAuthenticatedResponse 1`] = `
+{
+  "message": "Unauthorized",
+  "statusCode": 401,
+}
+`;
+
+exports[`VendigMachineController /POST deposit - should throw an error for a seller deposit: SellerDepositError 1`] = `
+{
+  "error": "Forbidden",
+  "message": "Forbidden resource",
+  "statusCode": 403,
+}
+`;
+
+exports[`VendigMachineController /POST deposit - should throw an error for an invalid coin: NoValidCoinError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "coin must be a valid enum value",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`VendigMachineController /POST deposit - should throw an error for missing a coin: MissingCoinError 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "coin must be a valid enum value",
+    "coin must be an integer number",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`VendigMachineController /POST reset - should reset the deposit of user1: ResetDeposit10Response 1`] = `
+{
+  "change": [
+    10,
+  ],
+}
+`;
+
+exports[`VendigMachineController /POST reset - should return an empty array for no deposit: ResetDeposit0Response 1`] = `
+{
+  "change": [],
+}
+`;
+
+exports[`VendigMachineController /POST reset - should return an error for a seller request: SellerErrorResponse 1`] = `
+{
+  "error": "Forbidden",
+  "message": "Forbidden resource",
+  "statusCode": 403,
+}
+`;
+
+exports[`VendigMachineController /POST reset - should return an error for not authenticated: NotAuthenticatedResponse 1`] = `
+{
+  "message": "Unauthorized",
+  "statusCode": 401,
+}
+`;
